@@ -1,0 +1,52 @@
+import { motion } from "motion/react";
+import Skills from "./Skills";
+
+const About = () => {
+  return (
+    <section className="max-w-5xl mx-auto pt-20 px-4">
+      <div className="mb-4 text-gray-400 text-sm">
+        <h2 className="text-2xl font-bold mb-4 tracking-wide text-gray-900 dark:text-white">
+          WHO AM I?
+        </h2>
+      </div>
+      <hr className="mb-8 border-gray-700" />
+      <div className="flex flex-col md:flex-row items-start md:items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="md:w-[55%] w-full mb-6 md:mb-0"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold">
+            Hi, I'm Arowolo Isaac.
+          </h1>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+          className="md:w-[45%] w-full md:pl-8"
+        >
+          <div className=" dark:bg-gray-900 rounded-xl shadow p-6">
+            <p className="mb-4 text-lg">
+              I'm a frontend web developer dedicated to turning ideas into
+              creative solutions. I specialize in creating seamless and
+              intuitive user experiences.
+            </p>
+            <p className="text-lg">
+              My approach focuses on creating scalable, high-performing
+              solutions tailored to both user needs and business objectives. By
+              prioritizing performance, accessibility, and responsiveness, I
+              strive to deliver experiences that not only engage users but also
+              drive tangible results.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+      {/* expertise */}
+      <Skills />
+    </section>
+  );
+};
+
+export default About;
