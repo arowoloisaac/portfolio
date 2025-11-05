@@ -29,16 +29,17 @@ const About = () => {
         >
           <div className=" dark:bg-gray-900 rounded-xl shadow p-6">
             <p className="mb-4 text-lg">
-              I'm a frontend web developer dedicated to turning ideas into
-              creative solutions. I specialize in creating seamless and
-              intuitive user experiences.
+              Let me duly introduce myself to you, My name is Arowolo Isaac
+              Abiodun and I am a graduate of the Tomsk State University where I
+              studied Software Engineering and gained most of my experience as a
+              software engineer.
             </p>
             <p className="text-lg">
-              My approach focuses on creating scalable, high-performing
-              solutions tailored to both user needs and business objectives. By
-              prioritizing performance, accessibility, and responsiveness, I
-              strive to deliver experiences that not only engage users but also
-              drive tangible results.
+              Acquiring this knowledge does not suffice what I have
+              attained, but I have applied them on multiple occasions at
+              different scopes from planning to deployment, both collaboratively
+              and independently, where I have proven myself as a learner and a
+              leader.
             </p>
           </div>
         </motion.div>

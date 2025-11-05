@@ -136,4 +136,50 @@ const third_circle_style = () => {
   );
 };
 
+const circle_style = ({top, left}: {top:string, left: string}) => {
+  return (
+    <motion.div
+      className="absolute z-0"
+      style={{
+        top: top,
+        left: left,
+        pointerEvents: "none",
+      }}
+      animate={{
+        x: [0, 600, 600, 0, 0],
+        y: [0, 0, 400, 400, 0],
+        rotate: [0, 360],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 10,
+        ease: "linear",
+      }}
+    >
+      <motion.div
+        style={{
+          width: 80,
+          height: 80,
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle at 40% 40%, #a78bfa 60%, #000 100%)",
+          boxShadow: "0 0 40px 10px #a78bfa55",
+          filter: "blur(1px)",
+          transformStyle: "preserve-3d",
+        }}
+        animate={{
+          rotateY: [0, 360],
+          rotateX: [0, 360],
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 6,
+          ease: "linear",
+        }}
+      />
+    </motion.div>
+  );
+};
+
+
 export { first_circle_style, second_circle_style, third_circle_style };

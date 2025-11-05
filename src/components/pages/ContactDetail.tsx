@@ -20,7 +20,7 @@ const ContactDetail = () => {
               Email:
             </span>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:arowoloisaac01@gmail.com"
               className="ml-2 text-purple-600 dark:text-purple-400 hover:underline"
             >
               arowoloisaacabiodun01@gmail.com

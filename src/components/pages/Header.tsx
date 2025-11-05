@@ -20,8 +20,9 @@ function App_Header() {
         className="nav-links"
       >
         {/* <a href="/" className="pl-3">Home</a> */}
-        <a href="/about">About</a>
+        <a className="pl-3" href="/about">About</a>
         <a href="/projects">Projects</a>
+        <a href="/resume">Resume</a>
         <a href="/gallery">Gallery</a>
         <a href="/contact" className="pr-3">
           Contact
