@@ -8,7 +8,9 @@ import About from "./components/pages/About";
 import Project from "./components/pages/Project";
 import Contact from "./components/pages/Contact";
 import Footer from "./components/pages/Footer";
-
+import Resume from "./components/pages/Resume";
+import pdfresume from "../src/assets/documents/arowoloisaac.pdf";
+import Page404 from "./components/pages/Page404";
 
 const lightBg = "/src/assets/images/3w-bg.jpg"; // Replace with your light image path
 const darkBg = "/src/assets/images/black-bg.jpg";
@@ -46,9 +48,9 @@ function App() {
       } catch (e) {}
     };
 
-    window.addEventListener("themeChange", updateTheme); // for your toggle
-    window.addEventListener("storage", updateTheme); // for other tabs / programmatic changes
-    updateTheme(); // initial sync
+    window.addEventListener("themeChange", updateTheme);
+    window.addEventListener("storage", updateTheme);
+    updateTheme(); 
 
     return () => {
       window.removeEventListener("themeChange", updateTheme);
@@ -60,7 +62,7 @@ function App() {
     <>
       {/* bg-gradient-to-br from-gray-900 via-purple-900 to-black */}
       <div
-        className=" min-h-screen px-4 bg-cover transition-all duration-700"
+        className="min-h-screen px-4 bg-cover transition-all duration-700"
         style={{
           backgroundImage: `url(${isDark ? darkBg : lightBg})`,
         }}
@@ -73,6 +75,8 @@ function App() {
               <Route path="about" element={<About />} />
               <Route path="projects" element={<Project />} />
               <Route path="contact" element={<Contact />} />
+              <Route path="resume" element={<Resume file={pdfresume} />} />
+              <Route path="*" element={<Page404 />} />
               {/* Add other routes here */}
             </Routes>
           </main>
