@@ -3,7 +3,7 @@ import ContactDetail from "./ContactDetail";
 
 const Contact = () => {
   return (
-    <div className="flex min-h-screen flex-col md:flex-row max-w-6xl mx-auto py-16 px-4">
+    <div className="flex min-h-[70dvh] flex-col md:flex-row max-w-6xl mx-auto justify-center py-16 px-4">
       <div className="md:w-[40%] w-full">
         <ContactDetail />
       </div>

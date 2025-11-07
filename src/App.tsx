@@ -62,14 +62,14 @@ function App() {
     <>
       {/* bg-gradient-to-br from-gray-900 via-purple-900 to-black */}
       <div
-        className="min-h-screen px-4 bg-cover transition-all duration-700"
+        className="flex flex-col min-h-screen px-4 bg-cover transition-all duration-700 overflow-x-hidden"
         style={{
           backgroundImage: `url(${isDark ? darkBg : lightBg})`,
         }}
       >
         <ThemeProvider defaultTheme={DEFAULT_THEME} storageKey={STORAGE_KEY}>
           <App_Header />
-          <main>
+          <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="about" element={<About />} />

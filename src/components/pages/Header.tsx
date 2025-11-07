@@ -23,7 +23,7 @@ function App_Header() {
         <a className="pl-3" href="/about">About</a>
         <a href="/projects">Projects</a>
         <a href="/resume">Resume</a>
-        <a href="/gallery">Gallery</a>
+        <a href="/blog">Blogs</a>
         <a href="/contact" className="pr-3">
           Contact
         </a>

@@ -18,19 +18,19 @@ const Home = () => {
       {third_circle_style()}
 
       <section
-        className="min-h-screen relative flex flex-col md:flex-row items-center justify-center pt-4 px-4 bg-cover bg-center transition-all duration-700"
-        style={{ paddingLeft: "30px" }}
+        className="lg:min-h-[70dvh] relative flex flex-col lg:flex-row items-center justify-center pt-4 px-4 bg-cover bg-center transition-all duration-700"
+        // style={{ paddingLeft: "30px" }}
       >
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="md:w-1/2 w-full text-center md:text-left mb-8 md:mb-0 lg:pl-16"
+          className="md:w-1/2 w-full text-center md:text-left mb-8 lg:mb-0 lg:pl-16"
         >
-          <div className="flex flex-col gap-8 lg:flex-row items-center">
-            <h4 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          <div className="flex flex-col min-[1025px]:gap-8 min-[1025px]:flex-row items-center">
+            <span className="text-2xl font-bold mb-0 text-gray-900 dark:text-white lg:text-4xl lg:mb-4">
               Software Engineer
-            </h4>
+            </span>
 
             <motion.span
               key={roleIndex}
