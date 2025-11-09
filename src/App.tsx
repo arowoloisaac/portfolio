@@ -2,7 +2,7 @@ import "./App.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { useEffect, useState } from "react";
 import Home from "@/components/pages/Home";
-import { Routes, Route } from "react-router";
+import { Routes, Route } from "react-router-dom";
 import App_Header from "@/components/pages/Header";
 import About from "@/components/pages/About";
 import Project from "@/components/pages/Project";
@@ -14,9 +14,6 @@ import Page404 from "@/components/pages/Page404";
 import Blog from "@/components/pages/Blog";
 import lightBg from "@/assets/images/3w-bg.jpg";
 import darkBg from "@/assets/images/black-bg.jpg";
-
-// const lightBg = "@/assets/images/3w-bg.jpg";
-// const darkBg = "/src/assets/images/black-bg.jpg";
 
 const STORAGE_KEY = "vite-ui-theme";
 const DEFAULT_THEME: "light" | "dark" = "dark";
@@ -75,7 +72,7 @@ function App() {
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="about" element={<About />} />
+              <Route path="/about" element={<About />} />
               <Route path="projects" element={<Project />} />
               <Route path="contact" element={<Contact />} />
               <Route path="resume" element={<Resume file={pdfresume} />} />

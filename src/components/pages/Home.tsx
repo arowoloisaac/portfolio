@@ -5,11 +5,11 @@ import {
   second_circle_style,
   third_circle_style,
 } from "../animations";
-import useRole  from "../sub-function/role";
+import useRole from "@/components/sub-function/role";
+import my_image from "@/assets/images/passport.jpg";
 
 const Home = () => {
-  const my_image = "/src/assets/images/passport.jpg";
-  const {roleIndex, displayedRole} = useRole();
+  const { roleIndex, displayedRole } = useRole();
 
   return (
     <>
