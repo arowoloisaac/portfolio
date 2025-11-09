@@ -1,20 +1,22 @@
 import "./App.css";
-import { ThemeProvider } from "./components/theme-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 import { useEffect, useState } from "react";
-import Home from "./components/pages/Home";
+import Home from "@/components/pages/Home";
 import { Routes, Route } from "react-router";
-import App_Header from "./components/pages/Header";
-import About from "./components/pages/About";
-import Project from "./components/pages/Project";
-import Contact from "./components/pages/Contact";
-import Footer from "./components/pages/Footer";
-import Resume from "./components/pages/Resume";
-import pdfresume from "../src/assets/documents/arowoloisaac.pdf";
-import Page404 from "./components/pages/Page404";
-import Blog from "./components/pages/Blog";
+import App_Header from "@/components/pages/Header";
+import About from "@/components/pages/About";
+import Project from "@/components/pages/Project";
+import Contact from "@/components/pages/Contact";
+import Footer from "@/components/pages/Footer";
+import Resume from "@/components/pages/Resume";
+import pdfresume from "@/assets/documents/arowoloisaac.pdf";
+import Page404 from "@/components/pages/Page404";
+import Blog from "@/components/pages/Blog";
+import lightBg from "@/assets/images/3w-bg.jpg";
+import darkBg from "@/assets/images/black-bg.jpg";
 
-const lightBg = "/src/assets/images/3w-bg.jpg"; // Replace with your light image path
-const darkBg = "/src/assets/images/black-bg.jpg";
+// const lightBg = "@/assets/images/3w-bg.jpg";
+// const darkBg = "/src/assets/images/black-bg.jpg";
 
 const STORAGE_KEY = "vite-ui-theme";
 const DEFAULT_THEME: "light" | "dark" = "dark";
