@@ -182,4 +182,9 @@ const circle_style = ({top, left}: {top:string, left: string}) => {
 };
 
 
-export { first_circle_style, second_circle_style, third_circle_style };
+export {
+  first_circle_style,
+  second_circle_style,
+  third_circle_style,
+  circle_style,
+};

@@ -4,15 +4,20 @@ import { Textarea } from "../ui/textarea";
 import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
-  const form = useRef<HTMLFormElement | any>('');
+  const form = useRef<HTMLFormElement | any>("");
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, {
-        publicKey: "YOUR_PUBLIC_KEY",
-      })
+    await emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        }
+      )
       .then(
         () => {
           console.log("SUCCESS!");
