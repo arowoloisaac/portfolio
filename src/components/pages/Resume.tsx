@@ -17,11 +17,13 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 const Resume = ({ file }: { file: string }) => {
   const [numPages, setNumPages] = useState<number>(1);
   const [pageNumber, setPageNumber] = useState<number>(1);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const [width, setWidth] = useState(window.innerWidth);
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) =>
     setNumPages(numPages);
+    // setIsLoading(false);
 
   function changePage(offset: number) {
     setPageNumber((prevPageNumber) => prevPageNumber + offset);
@@ -38,6 +40,10 @@ const Resume = ({ file }: { file: string }) => {
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -51,48 +57,98 @@ const Resume = ({ file }: { file: string }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mx-auto w-full overflow-hidden my-16">
-      <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
-        <Page
-          pageNumber={pageNumber}
-          width={Math.min(width * 0.9, 800)} // ✅ scales PDF to 90% of screen or max 800px
-        />
-      </Document>
-      <div
-        className="flex items-center justify-between mt-3 mb-2"
-        style={{ width: Math.min(width * 0.9, 800) }}
-      >
-        <div className="flex gap-2 ">
-          <button
-            className=""
-            type="button"
-            disabled={pageNumber <= 1}
-            onClick={previousPage}
-          >
-            <ChevronLeft />
-          </button>
-          <span className="text-center">
-            {pageNumber} of {numPages}
-          </span>
-          <button
-            type="button"
-            disabled={pageNumber >= numPages}
-            onClick={nextPage}
-          >
-            <ChevronRight />
-          </button>
+    <>
+      {isLoading ? (
+        <div className="flex justify-center items-center min-h-[70dvh]">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-purple-600"></div>
         </div>
-        <div>
-          <Button
-            variant= "ghost"
-            onClick={handleClickDownload}
-            className="glow-on-hover"
+      ) : (
+        <div className="flex flex-col items-center justify-center mx-auto w-full overflow-hidden my-18">
+          <Document file={file} onLoadSuccess={onDocumentLoadSuccess} loading='lazy'>
+            <Page
+              pageNumber={pageNumber}
+              width={Math.min(width * 0.9, 800)} // ✅ scales PDF to 90% of screen or max 800px
+            />
+          </Document>
+          <div
+            className="flex items-center justify-between mt-3 mb-2"
+            style={{ width: Math.min(width * 0.9, 800) }}
           >
-            Download
-          </Button>
+            <div className="flex gap-2 ">
+              <button
+                className=""
+                type="button"
+                disabled={pageNumber <= 1}
+                onClick={previousPage}
+              >
+                <ChevronLeft />
+              </button>
+              <span className="text-center">
+                {pageNumber} of {numPages}
+              </span>
+              <button
+                type="button"
+                disabled={pageNumber >= numPages}
+                onClick={nextPage}
+              >
+                <ChevronRight />
+              </button>
+            </div>
+            <div>
+              <Button
+                variant="ghost"
+                onClick={handleClickDownload}
+                className="glow-on-hover"
+              >
+                Download
+              </Button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+      {/* <div className="flex flex-col items-center justify-center mx-auto w-full overflow-hidden my-16">
+        <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+          <Page
+            pageNumber={pageNumber}
+            width={Math.min(width * 0.9, 800)} // ✅ scales PDF to 90% of screen or max 800px
+          />
+        </Document>
+        <div
+          className="flex items-center justify-between mt-3 mb-2"
+          style={{ width: Math.min(width * 0.9, 800) }}
+        >
+          <div className="flex gap-2 ">
+            <button
+              className=""
+              type="button"
+              disabled={pageNumber <= 1}
+              onClick={previousPage}
+            >
+              <ChevronLeft />
+            </button>
+            <span className="text-center">
+              {pageNumber} of {numPages}
+            </span>
+            <button
+              type="button"
+              disabled={pageNumber >= numPages}
+              onClick={nextPage}
+            >
+              <ChevronRight />
+            </button>
+          </div>
+          <div>
+            <Button
+              variant="ghost"
+              onClick={handleClickDownload}
+              className="glow-on-hover"
+            >
+              Download
+            </Button>
+          </div>
+        </div>
+      </div> */}
+    </>
   );
 };
 

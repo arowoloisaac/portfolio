@@ -2,10 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import type { IProject } from "@/components/sub-function/project";
-import projectData from "@/components/sub-function/project";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import type { IProject } from "@/components/functions/project";
+import projectData from "@/components/functions/project";
 import { Button } from "@/components/ui/button";
+import "@/assets/styles/glow.css";
 
 interface CardTransform {
   rotateX: number;
@@ -109,6 +116,7 @@ const ProjectCard = ({ project }: { project: IProject }) => {
     };
   }, [project]);
 
+
   return (
     <div ref={cardDivRef}>
       <Card className="max-w-md">
@@ -124,9 +132,7 @@ const ProjectCard = ({ project }: { project: IProject }) => {
             width={500}
             height={500}
           />
-          <p>
-            {project.shortDescription}
-          </p>
+          <p>{project.shortDescription}</p>
         </CardContent>
         <CardFooter className="gap-3 max-sm:flex-col max-sm:items-stretch">
           <Button className="glow-on-hover" asChild>
@@ -139,8 +145,8 @@ const ProjectCard = ({ project }: { project: IProject }) => {
             </a>
           </Button>
           <Button
-            className="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-radial-purple-500/10 "
-            variant={"outline"}
+            className={!project.demoUrl ? 'hidden': "transition delay-150 duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 hover:bg-radial-purple-500/10" }
+            variant="outline"
             asChild
           >
             <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">

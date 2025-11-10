@@ -14,6 +14,7 @@ import Page404 from "@/components/pages/Page404";
 import Blog from "@/components/pages/Blog";
 import lightBg from "@/assets/images/3w-bg.jpg";
 import darkBg from "@/assets/images/black-bg.jpg";
+import { Toaster } from "@/components/ui/sonner";
 
 const STORAGE_KEY = "vite-ui-theme";
 const DEFAULT_THEME: "light" | "dark" = "dark";
@@ -60,9 +61,8 @@ function App() {
 
   return (
     <>
-      {/* bg-gradient-to-br from-gray-900 via-purple-900 to-black */}
       <div
-        className="flex flex-col min-h-screen px-4 bg-cover transition-all duration-700 overflow-x-hidden"
+        className="flex flex-col min-h-screen px-4 bg-cover transition-all duration-100 overflow-x-hidden"
         style={{
           backgroundImage: `url(${isDark ? darkBg : lightBg})`,
         }}
@@ -80,7 +80,8 @@ function App() {
               <Route path="*" element={<Page404 />} />
             </Routes>
           </main>
-          <span className="p-8"></span>
+          <Toaster position="top-right" richColors />
+          {/* <span className="p-2"></span> */}
           <Footer />
         </ThemeProvider>
       </div>

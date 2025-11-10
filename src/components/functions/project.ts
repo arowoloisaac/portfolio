@@ -21,8 +21,8 @@ const projectData = async (): Promise<IProject[]> => {
         "Smooth, flowing gradients blending rich reds and blues in an abstract swirl.",
       imageUrl:
         "https://cdn.shadcnstudio.com/ss-assets/components/card/image-2.png?height=280&format=auto",
-      githubUrl: "#",
-      demoUrl: "#",
+      githubUrl: "https://github.com/arowoloisaac/pm",
+      demoUrl: "",
     },
     {
       id: "2",
@@ -32,8 +32,8 @@ const projectData = async (): Promise<IProject[]> => {
         "Smooth, flowing gradients blending rich reds and blues in an abstract swirl.",
       imageUrl:
         "https://cdn.shadcnstudio.com/ss-assets/components/card/image-2.png?height=280&format=auto",
-      githubUrl: "#",
-      demoUrl: "#",
+      githubUrl: "https://github.com/arowoloisaac/Project-Management",
+      demoUrl: "",
     },
     {
       id: "3",
@@ -43,8 +43,8 @@ const projectData = async (): Promise<IProject[]> => {
         "Smooth, flowing gradients blending rich reds and blues in an abstract swirl.",
       imageUrl:
         "https://cdn.shadcnstudio.com/ss-assets/components/card/image-2.png?height=280&format=auto",
-      githubUrl: "#",
-      demoUrl: "#",
+      githubUrl: "https://github.com/arowoloisaac/Key-Management-System",
+      demoUrl: "",
     },
     {
       id: "4",
@@ -54,8 +54,8 @@ const projectData = async (): Promise<IProject[]> => {
         "Smooth, flowing gradients blending rich reds and blues in an abstract swirl.",
       imageUrl:
         "https://cdn.shadcnstudio.com/ss-assets/components/card/image-2.png?height=280&format=auto",
-      githubUrl: "#",
-      demoUrl: "#",
+      githubUrl: "https://github.com/arowoloisaac/Cabinet-Prototype-Frontend",
+      demoUrl: "",
     },
     {
       id: "5",
@@ -65,8 +65,18 @@ const projectData = async (): Promise<IProject[]> => {
         "Smooth, flowing gradients blending rich reds and blues in an abstract swirl.",
       imageUrl:
         "https://cdn.shadcnstudio.com/ss-assets/components/card/image-2.png?height=280&format=auto",
-      githubUrl: "#",
-      demoUrl: "#",
+      githubUrl: "https://github.com/arowoloisaac/portfolio",
+      demoUrl: "",
+    },{
+      id: "6",
+      title: "Portfolio Website",
+      shortDescription: "My public portfolio website to showcase my skills and projects.",
+      description:
+        "Smooth, flowing gradients blending rich reds and blues in an abstract swirl.",
+      imageUrl:
+        "https://cdn.shadcnstudio.com/ss-assets/components/card/image-2.png?height=280&format=auto",
+      githubUrl: "https://github.com/arowoloisaac/portfolio",
+      demoUrl: "https://arowolo.vercel.app/",
     },
   ];
 };

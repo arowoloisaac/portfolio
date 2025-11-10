@@ -9,9 +9,8 @@ import {
 } from "@/components/ui/card";
 import { useEffect, useState } from "react";
 import "../../../assets/styles/glow.css";
-import type { IProject } from "@/components/sub-function/project";
-import projectData from "@/components/sub-function/project";
-
+import type { IProject } from "@/components/functions/project";
+import projectData from "@/components/functions/project";
 
 const CardTopImageDemo = () => {
   const [projects, getProjects] = useState<IProject[]>([]);

@@ -1,5 +1,4 @@
 "use client";
-
 import Card3dDemo from "../shadcn-studio/card/card-16";
 
 const Project = () => {
@@ -13,15 +12,16 @@ const Project = () => {
         including timelines and documentation.
       </p>
 
-      <div className="p-5 bg-white/25 backdrop-blur-xs backdrop-grayscale  border-2 rounded-md">
+      <div className="p-5 bg-white/25 backdrop-blur-xs backdrop-grayscale  border-2 rounded-md mb-2.5">
         <span className=" text-gray-600 dark:text-gray-300 ">
           Over the years have worked on multiple projects, which includes
-          freelancing projects, personal projects, and collaborated with teams
+          freelancing projects mostly covered with NDA, personal projects, and collaborated with teams
           on several occassions to deliver quality software solutions.
         </span>
       </div>
       <div className="pt-2 scroll-smooth grid max-md: grid-cols-1  min-lg:grid-cols-3 gap-4">
         <Card3dDemo />
+        
       </div>
     </section>
   );

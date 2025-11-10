@@ -1,6 +1,8 @@
+"use client";
 import { useRef } from "react";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
+import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
@@ -20,9 +22,11 @@ const ContactForm = () => {
       )
       .then(
         () => {
-          console.log("SUCCESS!");
+          toast.success("Message sent successfully!");
+          form.current.reset();
         },
         (error) => {
+          toast.error("Failed to send message. Please try again.");
           console.log("FAILED...", error.text);
         }
       );

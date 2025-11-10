@@ -1,11 +1,8 @@
 "use client";
 import { motion } from "motion/react";
-import {
-  first_circle_style,
-  second_circle_style,
-  third_circle_style,
-} from "../animations";
-import useRole from "@/components/sub-function/role";
+
+import UseTime from "../animations/cube";
+import useRole from "@/components/functions/role";
 import my_image from "@/assets/images/passport.jpg";
 
 const Home = () => {
@@ -13,10 +10,9 @@ const Home = () => {
 
   return (
     <>
-      {first_circle_style()}
-      {second_circle_style()}
-      {third_circle_style()}
-
+      <div className="pointer-events-none max-[600px]:hidden">
+        <UseTime />
+      </div>
       <section
         className="lg:min-h-[70dvh] relative flex flex-col lg:flex-row items-center justify-center pt-4 px-4 bg-cover bg-center transition-all duration-700"
         // style={{ paddingLeft: "30px" }}
@@ -67,6 +63,7 @@ const Home = () => {
             src={my_image}
             alt="Profile"
             className="w-64 h-72 rounded-2xl shadow-xl object-cover"
+            loading="lazy"
           />
         </motion.div>
       </section>

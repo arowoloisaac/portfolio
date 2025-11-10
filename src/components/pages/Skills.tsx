@@ -24,13 +24,7 @@ const techStack2 = [
   "Postman",
 ];
 
-const techStack3 = [
-  "PostgreSQL",
-  "MongoDB",
-  "MSSQL",
-  "MySQL",
-];
-
+const techStack3 = ["PostgreSQL", "MongoDB", "MSSQL", "MySQL"];
 
 const devops = [
   "Docker",
@@ -39,8 +33,7 @@ const devops = [
   "Azure",
   "Heroku",
   "Selenium",
-//   "Netlify",
-// Vercel
+  "Vercel",
 ];
 
 const Skills = () => {
@@ -57,7 +50,7 @@ const Skills = () => {
           </h3>
           <p className="mb-4 text-gray-700 dark:text-gray-300">
             I build modern, responsive web interfaces using frameworks like
-            React and Vue.js. 
+            React and Vue.js.
           </p>
         </div>
         <div className="w-[40%]">
@@ -84,7 +77,7 @@ const Skills = () => {
           </h3>
           <p className="mb-4 text-gray-700 dark:text-gray-300">
             I develop scalable APIs and backend systems using Express.js, Flask,
-            FastAPI, and .NET Core WebAPI to be specific. 
+            FastAPI, and .NET Core WebAPI to be specific.
           </p>
         </div>
         <div className="w-[40%]">
