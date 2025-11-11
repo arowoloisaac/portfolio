@@ -76,7 +76,7 @@ function App() {
               <Route path="projects" element={<Project />} />
               <Route path="contact" element={<Contact />} />
               <Route path="resume" element={<Resume file={pdfresume} />} />
-              <Route path="blog" element={<Blog />}/>
+              <Route path="blog" element={<Blog />} />
               <Route path="*" element={<Page404 />} />
             </Routes>
           </main>

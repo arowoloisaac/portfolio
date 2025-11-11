@@ -46,7 +46,7 @@ const Home = () => {
             regardless of the situation.
           </p>
           <a
-            href="#projects"
+            href="projects"
             className="bg-purple-600 hover:bg-purple-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition"
           >
             View My Projects

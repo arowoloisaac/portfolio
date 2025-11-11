@@ -35,11 +35,11 @@ const About = () => {
               software engineer.
             </p>
             <p className="text-lg">
-              Acquiring this knowledge does not suffice what I have
-              attained, but I have applied them on multiple occasions at
-              different scopes from planning to deployment, both collaboratively
-              and independently, where I have proven myself as a learner and a
-              leader.
+              Acquiring this knowledge does not suffice what I have attained,
+              but I have applied them on multiple occasions at different scopes
+              from planning to deployment over the course of 4 years, both
+              collaboratively and independently, where I have proven myself as a
+              learner and a leader.
             </p>
           </div>
         </motion.div>

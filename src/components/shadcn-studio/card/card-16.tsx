@@ -126,7 +126,7 @@ const ProjectCard = ({ project }: { project: IProject }) => {
         <CardContent className="space-y-6 text-sm">
           <img
             ref={imageRef}
-            src="https://cdn.shadcnstudio.com/ss-assets/components/card/image-10.png?width=350&format=auto"
+            src={project.imageUrl ?? "https://cdn.shadcnstudio.com/ss-assets/components/card/image-10.png?width=350&format=auto"}
             alt={project.title ?? "Banner"}
             className="aspect-video w-full rounded-md object-cover"
             width={500}

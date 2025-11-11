@@ -1,9 +1,25 @@
-import { useState } from "react";
 import { ModeToggle } from "../mode-toogle";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useNavigate } from "react-router-dom";
 
 function App_Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const navigationItems = [
+    { name: "About", path: "/about" },
+    { name: "Projects", path: "/projects" },
+    { name: "Resume", path: "/resume" },
+    { name: "Blogs", path: "/blog" },
+    { name: "Contact", path: "/contact" },
+  ];
 
+  const handleNavigate = (path: string) => {
+    navigate(path);
+  };
   return (
     <header className="navbar">
       <div className="logo">
@@ -19,22 +35,37 @@ function App_Header() {
         }}
         className="nav-links"
       >
-        {/* <a href="/" className="pl-3">Home</a> */}
-        <a className="pl-3" href="/about">About</a>
-        <a href="/projects">Projects</a>
-        <a href="/resume">Resume</a>
-        <a href="/blog">Blogs</a>
-        <a href="/contact" className="pr-3">
-          Contact
-        </a>
+        {navigationItems.map((item) => (
+          <a
+            className={
+              item == navigationItems[0]
+                ? "pl-3"
+                : item == navigationItems[4]
+                ? "pr-3"
+                : ""
+            }
+            href={item.path}
+          >
+            {item.name}
+          </a>
+        ))}
       </nav>
-      <button
-        className="menu-btn"
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle menu"
-      >
-        ☰
-      </button>
+
+      <div className="md:hidden">
+        <DropdownMenu>
+          <DropdownMenuTrigger>☰</DropdownMenuTrigger>
+          <DropdownMenuContent>
+            {navigationItems.map((item) => (
+              <DropdownMenuItem
+                id={item.name}
+                onClick={() => handleNavigate(item.path)}
+              >
+                {item.name}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
       <div className="toggle">
         <ModeToggle />
       </div>

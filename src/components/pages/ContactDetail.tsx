@@ -73,7 +73,7 @@ const ContactDetail = () => {
               Location:
             </span>
             <span className="ml-2 text-gray-600 dark:text-gray-400">
-              Tomsk, Russia
+              Nigeria
             </span>
           </div>
           <div>

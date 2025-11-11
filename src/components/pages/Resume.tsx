@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 // import mypdf from '../../assets/documents/arowoloisaac.pdf';
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -23,10 +23,14 @@ const Resume = ({ file }: { file: string }) => {
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) =>
     setNumPages(numPages);
-    // setIsLoading(false);
+  
+  const loadingTimeout = useRef<number | null>(null);
 
   function changePage(offset: number) {
-    setPageNumber((prevPageNumber) => prevPageNumber + offset);
+    // setPageNumber((prevPageNumber) => prevPageNumber + offset);
+    setTimeout(() => {
+      setPageNumber((prevPageNumber) => prevPageNumber + offset);
+    }, 1000);
   }
 
   function previousPage() {
@@ -40,14 +44,24 @@ const Resume = ({ file }: { file: string }) => {
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
-    setTimeout(() => {
+    // setTimeout(() => {
+    //   setIsLoading(false);
+    // }, 1800);
+    loadingTimeout.current = window.setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
-    
-    return () => window.removeEventListener("resize", handleResize);
+    }, 500);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (loadingTimeout.current) {
+        clearTimeout(loadingTimeout.current);
+        loadingTimeout.current = null;
+      };
+    }
   }, []);
 
   const handleClickDownload = () => {
+    if (!file) return;
     const link = document.createElement("a");
     link.href = file;
     link.download = "arowolo_isaac_cv.pdf";
@@ -64,11 +78,15 @@ const Resume = ({ file }: { file: string }) => {
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center mx-auto w-full overflow-hidden my-18">
-          <Document file={file} onLoadSuccess={onDocumentLoadSuccess} loading='lazy'>
-            <Page
-              pageNumber={pageNumber}
-              width={Math.min(width * 0.9, 800)} // ✅ scales PDF to 90% of screen or max 800px
-            />
+          <Document
+            file={file}
+            onLoadSuccess={onDocumentLoadSuccess}
+            onLoadError={() => {
+              console.log("cannot load resume");
+              setIsLoading(false);
+            }}
+          >
+            <Page pageNumber={pageNumber} width={Math.min(width * 0.9, 800)} />
           </Document>
           <div
             className="flex items-center justify-between mt-3 mb-2"
