@@ -6,6 +6,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../ui/button";
 
 function App_Header() {
   const navigate = useNavigate();
@@ -51,23 +52,27 @@ function App_Header() {
         ))}
       </nav>
 
-      <div className="md:hidden">
-        <DropdownMenu>
-          <DropdownMenuTrigger>☰</DropdownMenuTrigger>
-          <DropdownMenuContent>
-            {navigationItems.map((item) => (
-              <DropdownMenuItem
-                id={item.name}
-                onClick={() => handleNavigate(item.path)}
-              >
-                {item.name}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
       <div className="toggle">
         <ModeToggle />
+        <div className="md:hidden">
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Button variant="outline" size="icon">
+                ☰
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              {navigationItems.map((item) => (
+                <DropdownMenuItem
+                  id={item.name}
+                  onClick={() => handleNavigate(item.path)}
+                >
+                  {item.name}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
     </header>
   );

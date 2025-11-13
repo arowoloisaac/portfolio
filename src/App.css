@@ -75,6 +75,8 @@
     display: block;
   }
   .toggle {
-    display: none;
+    display: flex;
+    gap: 2px;
+    /* display: none; */
   }
 }

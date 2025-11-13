@@ -10,11 +10,11 @@ const Home = () => {
 
   return (
     <>
-      <div className="pointer-events-none max-[600px]:hidden">
+      <div className="pointer-events-none max-md:hidden">
         <UseTime />
       </div>
       <section
-        className="lg:min-h-[70dvh] relative flex flex-col lg:flex-row items-center justify-center pt-4 px-4 bg-cover bg-center transition-all duration-700"
+        className="max-md:my-10 md:min-h-[70dvh] relative flex flex-col md:flex-row items-center justify-center pt-4 px-4 bg-cover bg-center transition-all duration-700"
         // style={{ paddingLeft: "30px" }}
       >
         <motion.div
@@ -23,8 +23,8 @@ const Home = () => {
           transition={{ duration: 1 }}
           className="md:w-1/2 w-full text-center md:text-left mb-8 lg:mb-0 lg:pl-16"
         >
-          <div className="flex flex-col min-[1025px]:gap-8 min-[1025px]:flex-row items-center">
-            <span className="text-2xl font-bold mb-0 text-gray-900 dark:text-white lg:text-4xl lg:mb-4">
+          <div className="flex flex-col min-[768px]:gap-5 min-[1024px]:flex-row items-center">
+            <span className="text-2xl font-bold mb-0 dark:text-zinc-300 lg:text-4xl lg:mb-4">
               Software Engineer
             </span>
 
@@ -33,14 +33,14 @@ const Home = () => {
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="text-lg font-medium text-gray-700 dark:text-gray-300"
+              className="text-lg font-medium dark:text-zinc-300"
             >
               {displayedRole}
               <span className="inline-block w-1 h-5 align-middle bg-gray-700 dark:bg-gray-300 ml-1 animate-pulse" />
             </motion.span>
           </div>
 
-          <p className="text-xl mb-8 text-gray-700 dark:text-gray-300">
+          <p className="text-xl mb-8 dark:text-zinc-300">
             Hi, I’m Arowolo Isaac. A Software Engineer who sees between the
             lines and understand the stance of giving the best experience
             regardless of the situation.
