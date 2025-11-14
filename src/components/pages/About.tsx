@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section className="max-w-5xl mx-auto pt-20 px-4">
       <div className="mb-4 text-gray-400 text-sm">
-        <h2 className="text-2xl font-bold mb-4 tracking-wide text-gray-900 dark:text-white">
+        <h2 className="text-2xl font-bold mb-4 tracking-wide">
           WHO AM I?
         </h2>
       </div>
@@ -27,7 +27,7 @@ const About = () => {
           transition={{ duration: 1.2 }}
           className="md:w-[45%] w-full md:pl-8"
         >
-          <div className=" dark:bg-gray-900 rounded-xl shadow p-6">
+          <div className="rounded-xl shadow p-6">
             <p className="mb-4 text-lg">
               Let me duly introduce myself to you, My name is Arowolo Isaac
               Abiodun and I am a graduate of the Tomsk State University where I

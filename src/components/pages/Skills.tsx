@@ -39,13 +39,13 @@ const devops = [
 const Skills = () => {
   return (
     <div className="mt-12 rounded-xl shadow p-6">
-      <h1 className="text-center py-10 text-3xl md:text-4xl font-bold mb-4 tracking-wide text-gray-900 dark:text-white">
+      <h1 className="text-center py-10 text-3xl md:text-4xl font-bold mb-4 tracking-wide">
         Professional Skillset
       </h1>
       {/* frontend */}
       <div className="flex justify-between  pb-8">
         <div className="w-[45%]">
-          <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+          <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
             Frontend Development
           </h3>
           <p className="mb-4 text-gray-700 dark:text-gray-300">
@@ -55,13 +55,13 @@ const Skills = () => {
         </div>
         <div className="w-[40%]">
           <div className="flex flex-wrap gap-2">
-            <div className=" font-semibold text-gray-900 dark:text-white">
+            <div className=" font-semibold text-gray-800 dark:text-white">
               Tech stack:
             </div>
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-1 rounded-full text-sm font-medium"
+                className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white px-4 py-1 rounded-full text-sm font-medium"
               >
                 {tech}
               </span>
@@ -72,7 +72,7 @@ const Skills = () => {
       {/* backend */}
       <div className="flex justify-between  pb-8">
         <div className="w-[45%]">
-          <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+          <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
             Backend Development
           </h3>
           <p className="mb-4 text-gray-700 dark:text-gray-300">
@@ -82,13 +82,13 @@ const Skills = () => {
         </div>
         <div className="w-[40%]">
           <div className="flex flex-wrap gap-2">
-            <div className=" font-semibold text-gray-900 dark:text-white">
+            <div className=" font-semibold text-gray-800 dark:text-white">
               Tech stack:
             </div>
             {techStack2.map((tech) => (
               <span
                 key={tech}
-                className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-1 rounded-full text-sm font-medium"
+                className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white px-4 py-1 rounded-full text-sm font-medium"
               >
                 {tech}
               </span>
@@ -99,7 +99,7 @@ const Skills = () => {
       {/* databases */}
       <div className="flex justify-between pb-8">
         <div className="w-[45%]">
-          <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+          <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
             Database
           </h3>
           <p className="mb-4 text-gray-700 dark:text-gray-300">
@@ -109,13 +109,13 @@ const Skills = () => {
         </div>
         <div className="w-[40%]">
           <div className="flex flex-wrap gap-2">
-            <div className=" font-semibold text-gray-900 dark:text-white">
+            <div className=" font-semibold text-gray-800 dark:text-white">
               Tech stack:
             </div>
             {techStack3.map((tech) => (
               <span
                 key={tech}
-                className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-1 rounded-full text-sm font-medium"
+                className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white px-4 py-1 rounded-full text-sm font-medium"
               >
                 {tech}
               </span>
@@ -126,7 +126,7 @@ const Skills = () => {
       {/* devops */}
       <div className="flex justify-between pb-8">
         <div className="w-[45%]">
-          <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+          <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
             DevOps & Automation Tools
           </h3>
           <p className="mb-4 text-gray-700 dark:text-gray-300">
@@ -136,13 +136,13 @@ const Skills = () => {
         </div>
         <div className="w-[40%]">
           <div className="flex flex-wrap gap-2">
-            <div className="font-semibold text-gray-900 dark:text-white">
+            <div className="font-semibold text-gray-800 dark:text-white">
               Tech stack:
             </div>
             {devops.map((tech) => (
               <span
                 key={tech}
-                className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-1 rounded-full text-sm font-medium"
+                className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white px-4 py-1 rounded-full text-sm font-medium"
               >
                 {tech}
               </span>

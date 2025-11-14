@@ -2,10 +2,10 @@ const ContactDetail = () => {
   return (
     <section className="max-w-md mx-auto">
       <div className="shadow-lg p-8">
-        <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
+        <h2 className="text-3xl font-bold mb-2">
           Get in Touch
         </h2>
-        <p className="mb-4 text-gray-700 dark:text-gray-300">
+        <p className="mb-4">
           Thank you for your interest! I’m always excited to connect,
           collaborate, or discuss new opportunities. I’ll get back to you as
           quickly as possible—whether you’re looking to hire me or just want to
@@ -16,7 +16,7 @@ const ContactDetail = () => {
         </div>
         <div className="space-y-4">
           <div>
-            <span className="font-medium text-gray-800 dark:text-gray-200">
+            <span className="font-medium">
               Email:
             </span>
             <a
@@ -27,7 +27,7 @@ const ContactDetail = () => {
             </a>
           </div>
           <div>
-            <span className="font-medium text-gray-800 dark:text-gray-200">
+            <span className="font-medium">
               Github:
             </span>
             <a
@@ -40,7 +40,7 @@ const ContactDetail = () => {
             </a>
           </div>
           <div>
-            <span className="font-medium text-gray-800 dark:text-gray-200">
+            <span className="font-medium">
               Phone:
             </span>
             <a
@@ -58,7 +58,7 @@ const ContactDetail = () => {
           </div>
 
           <div>
-            <span className="font-medium text-gray-800 dark:text-gray-200">
+            <span className="font-medium">
               Telegram:
             </span>
             <a
@@ -69,7 +69,7 @@ const ContactDetail = () => {
             </a>
           </div>
           <div>
-            <span className="font-medium text-gray-800 dark:text-gray-200">
+            <span className="font-medium">
               Location:
             </span>
             <span className="ml-2 text-gray-600 dark:text-gray-400">
@@ -77,7 +77,7 @@ const ContactDetail = () => {
             </span>
           </div>
           <div>
-            <span className="font-medium text-gray-800 dark:text-gray-200">
+            <span className="font-medium0">
               LinkedIn:
             </span>
             <a
