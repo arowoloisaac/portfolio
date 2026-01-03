@@ -23,7 +23,7 @@ const Home = () => {
           transition={{ duration: 1 }}
           className="md:w-1/2 w-full text-center md:text-left mb-8 lg:mb-0 lg:pl-16"
         >
-          <div className="flex flex-col min-[768px]:gap-5 min-[1024px]:flex-row items-center">
+          <div className="flex flex-col min-[768px]:gap-5 min-[1024px]:flex-row max-sm:items-center lg:items-center">
             <span className="text-2xl font-bold mb-0 lg:text-4xl lg:mb-4">
               Software Engineer
             </span>
