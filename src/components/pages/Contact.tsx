@@ -3,11 +3,11 @@ import ContactDetail from "./ContactDetail";
 
 const Contact = () => {
   return (
-    <div className="flex min-h-[70dvh] flex-col md:flex-row max-w-6xl mx-auto items-center justify-center py-16 px-4">
-      <div className="md:w-[40%] w-full">
+    <div className="relative flex min-h-screen flex-col lg:flex-row max-w-6xl gap-2 mx-auto lg:items-center lg:justify-center py-16 px-4">
+      <div className="lg:w-[45%] w-full ">
         <ContactDetail />
       </div>
-      <div className="md:w-[60%] w-full">
+      <div className="lg:w-[55%] w-full">
         <ContactForm />
       </div>
     </div>

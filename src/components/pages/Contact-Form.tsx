@@ -1,91 +1,102 @@
-"use client";
-import { useRef } from "react";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
-import { toast } from "sonner";
-import emailjs from "@emailjs/browser";
+'use client';
+import { useRef } from 'react';
+import { Input } from '../ui/input';
+import { Textarea } from '../ui/textarea';
+import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
-  const form = useRef<HTMLFormElement | any>("");
+   const form = useRef<HTMLFormElement | any>('');
 
-  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
 
-    await emailjs
-      .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        form.current,
-        {
-          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-        }
-      )
-      .then(
-        () => {
-          toast.success("Message sent successfully!");
-          form.current.reset();
-        },
-        (error) => {
-          toast.error("Failed to send message. Please try again.");
-          console.log("FAILED...", error.text);
-        }
-      );
-  };
+      await emailjs
+         .sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            form.current,
+            {
+               publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+            }
+         )
+         .then(
+            () => {
+               toast.success('Message sent successfully!');
+               form.current.reset();
+            },
+            (error) => {
+               toast.error('Failed to send message. Please try again.');
+               console.log('FAILED...', error.text);
+            }
+         );
+   };
 
-  return (
-    <section className="mx-auto  ">
-      <div className="bg-white dark:bg-gray-900  shadow-lg p-8">
-        <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-          Contact Me
-        </h2>
-        <p className="mb-8 text-gray-600 dark:text-gray-300">
-          Feel free to reach out using the form below.
-        </p>
-        <form ref={form} onSubmit={sendEmail} className="space-y-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
-              Name
-            </label>
-            <Input
-              name="user_name"
-              type="text"
-              placeholder="Your name"
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
-              Email
-            </label>
-            <Input
-              name="user_email"
-              type="email"
-              placeholder="Email"
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
-              Message
-            </label>
-            <Textarea
-              rows={6}
-              className="h-32"
-              placeholder="Type your message here."
-              required
-              name="message"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-purple-600 hover:bg-purple-800 text-white font-semibold py-3 px-6 rounded-md shadow transition"
-          >
-            Send Message
-          </button>
-        </form>
-      </div>
-    </section>
-  );
+   return (
+      // F9F8F6 fcf9f9 EFE9E3
+      <section className="mx-auto md:max-w-lg lg:min-w-2xl border dark:border-[#2b2f35] rounded-lg card">
+         <div className="px-10 py-8 lg:px-16">
+            <p className="mb-8 capitalize text-lg font-semibold">
+               You can also get in touch by filling the form below.
+            </p>
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
+               <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 sm:pb-0.5">
+                     Name
+                  </label>
+                  <Input
+                     name="user_name"
+                     type="text"
+                     placeholder="Your name"
+                     required
+                     className="py-5"
+                  />
+               </div>
+               <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 sm:pb-0.5">
+                     Email
+                  </label>
+                  <Input
+                     name="user_email"
+                     type="email"
+                     placeholder="your_mail@gmail.com"
+                     required
+                     className="py-5"
+                  />
+               </div>{' '}
+               <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 sm:pb-0.5">
+                     Subject
+                  </label>
+                  <Input
+                     name="user_subject"
+                     type="text"
+                     placeholder="Subject"
+                     required
+                     className="py-5"
+                  />
+               </div>
+               <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 sm:pb-0.5">
+                     Message
+                  </label>
+                  <Textarea
+                     rows={6}
+                     className="h-32"
+                     placeholder="Type your message here."
+                     required
+                     name="message"
+                  />
+               </div>
+               <button
+                  type="submit"
+                  className="w-full button  font-semibold py-3 px-6 rounded-md ">
+                  Send Message
+               </button>
+            </form>
+         </div>
+      </section>
+   );
 };
 
 export default ContactForm;
