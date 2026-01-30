@@ -48,7 +48,7 @@ function App_Header() {
 
             <div className="toggle">
                <ModeToggle />
-               <div className="sm:hidden">
+               <div className="sm:hidden pl-1">
                   <DropdownMenu>
                      <DropdownMenuTrigger>
                         <Button variant="outline" size="icon">

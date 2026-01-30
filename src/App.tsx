@@ -65,7 +65,7 @@ function App() {
                storageKey={STORAGE_KEY}>
                <App_Header />
 
-               <main className="flex-1">
+               <main>
                   <Routes>
                      <Route path="/" element={<Home />} />
                      <Route path="/about" element={<About />} />

@@ -7,7 +7,7 @@ const About = () => {
    return (
       <motion.section className="relative max-w-6xl mx-auto py-20 px-4 min-h-screen">
          <div className="mb-4">
-            <h2 className="text-5xl font-bold mb-4 tracking-wide ">
+            <h2 className="text-5xl font-bold mb-4 tracking-wide">
                WHO AM I?
             </h2>
          </div>
@@ -33,7 +33,7 @@ const About = () => {
                className="md:w-[50%] w-full md:pl-8">
                <div className="rounded-lg shadow px-8 py-7 font-light card sm:text-xl">
                   <motion.p
-                     initial={{ x: 60, y: 20, opacity: 0.2 }}
+                     initial={{ x: 40, y: 20, opacity: 0.2 }}
                      whileInView={{
                         opacity: 0.9,
                         x: 0,
@@ -47,7 +47,7 @@ const About = () => {
                      most of my experience as a software engineer.
                   </motion.p>
                   <motion.p
-                     initial={{ x: -60, y: 20, opacity: 0.1 }}
+                     initial={{ x: -30, y: 20, opacity: 0.1 }}
                      whileInView={{
                         opacity: 0.9,
                         x: 0,

@@ -34,14 +34,14 @@ const ContactForm = () => {
 
    return (
       // F9F8F6 fcf9f9 EFE9E3
-      <section className="mx-auto md:max-w-lg lg:min-w-2xl border dark:border-[#2b2f35] rounded-lg card">
-         <div className="px-10 py-8 lg:px-16">
-            <p className="mb-8 capitalize text-lg font-semibold">
+      <section className="mx-auto md:max-w-lg lg:min-w-2xl border rounded-lg card">
+         <div className="px-5 sm:px-10 py-8 lg:px-16">
+            <p className="mb-8 capitalize text-xl font-semibold">
                You can also get in touch by filling the form below.
             </p>
             <form ref={form} onSubmit={sendEmail} className="space-y-6">
                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 sm:pb-0.5">
+                  <label className="block text-sm font-medium sm:pb-0.5">
                      Name
                   </label>
                   <Input
@@ -53,7 +53,7 @@ const ContactForm = () => {
                   />
                </div>
                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 sm:pb-0.5">
+                  <label className="block text-sm font-medium sm:pb-0.5">
                      Email
                   </label>
                   <Input
@@ -65,7 +65,7 @@ const ContactForm = () => {
                   />
                </div>{' '}
                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 sm:pb-0.5">
+                  <label className="block text-sm font-medium sm:pb-0.5">
                      Subject
                   </label>
                   <Input
@@ -77,12 +77,12 @@ const ContactForm = () => {
                   />
                </div>
                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 sm:pb-0.5">
+                  <label className="block text-sm font-medium sm:pb-0.5">
                      Message
                   </label>
                   <Textarea
                      rows={6}
-                     className="h-32"
+                     className="h-40"
                      placeholder="Type your message here."
                      required
                      name="message"
@@ -90,7 +90,7 @@ const ContactForm = () => {
                </div>
                <button
                   type="submit"
-                  className="w-full button  font-semibold py-3 px-6 rounded-md ">
+                  className="w-full bg-primary text-primary-foreground font-semibold py-3 px-6 rounded-md ">
                   Send Message
                </button>
             </form>

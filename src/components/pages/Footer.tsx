@@ -1,4 +1,39 @@
-import { Github, Linkedin } from 'lucide-react';
+import { FaGithub, FaLinkedinIn, FaTelegramPlane } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+
+export const details = [
+   {
+      name: 'Github',
+      // style={{ color: '#181717' }}
+      icon: <FaGithub className="size-5 sm:size-6" />,
+      link: 'https://github.com/arowoloisaac',
+   },
+   {
+      name: 'Telegram',
+      icon: (
+         <FaTelegramPlane
+            className="size-5 sm:size-6"
+            style={{ color: '#0088CC' }}
+         />
+      ),
+      link: 'https://t.me/arowoloisaac',
+   },
+   {
+      name: 'LinkedIn',
+      icon: (
+         <FaLinkedinIn
+            className="size-5 sm:size-6"
+            style={{ color: '#0077B5' }}
+         />
+      ),
+      link: 'https://www.linkedin.com/in/isaac-arowolo-07386325a/',
+   },
+   {
+      name: 'X',
+      icon: <FaXTwitter className="size-5 sm:size-6" />,
+      link: 'https://www.linkedin.com/in/isaac-arowolo-07386325a/',
+   },
+];
 
 const Footer = () => {
    return (
@@ -13,24 +48,19 @@ const Footer = () => {
                </div>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 ">
                <div className="flex gap-3">
-                  <a
-                     href="https://github.com/arowoloisaac"
-                     aria-label="GitHub"
-                     target="_blank"
-                     rel="noopener noreferrer"
-                     className="hover:text-purple-400 transition">
-                     <Github size={20} />
-                  </a>
-                  <a
-                     href="https://linkedin.com/in/isaac-arowolo-07386325a"
-                     aria-label="LinkedIn"
-                     target="_blank"
-                     rel="noopener noreferrer"
-                     className="hover:text-purple-400 transition">
-                     <Linkedin size={20} />
-                  </a>
+                  {details.map((itm) => (
+                     <a
+                        href={itm.link}
+                        aria-label={itm.name}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition border bg-secondary rounded-full p-1.5">
+                        {itm.icon}
+                     </a>
+                  ))}
+                  
                </div>
             </div>
          </div>
