@@ -65,7 +65,7 @@ const Home = () => {
               <img
                  src={my_image}
                  alt="Profile"
-                 className="w-64 h-72 md:w-120 md:h-fit rounded-xl shadow-xl object-cover"
+                 className="w-64 h-72 md:h-fit rounded-xl shadow-xl object-cover"
                  loading="lazy"
               />
            </motion.div>
