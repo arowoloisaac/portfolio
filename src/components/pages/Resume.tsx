@@ -103,7 +103,7 @@ const Resume = ({ file }: { file: string }) => {
                      </span>
                      <button
                         type="button"
-                        disabled={pageNumber == numPages ? true : false}
+                        disabled={pageNumber >= numPages ? true : false}
                         onClick={nextPage}>
                         <ChevronRight />
                      </button>
