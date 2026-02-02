@@ -25,7 +25,7 @@ const Resume = ({ file }: { file: string }) => {
       // setPageNumber((prevPageNumber) => prevPageNumber + offset);
       setTimeout(() => {
          setPageNumber((prevPageNumber) => prevPageNumber + offset);
-      }, 1000);
+      }, 1);
    }
 
    function previousPage() {
