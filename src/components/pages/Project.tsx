@@ -13,14 +13,14 @@ const Project = () => {
             including timelines and documentation.
          </p>
 
-         <div className="p-3  backdrop-blur-xs backdrop-grayscale  border-2 rounded-md mb-2.5 card">
+         {/* <div className="p-3  backdrop-blur-xs backdrop-grayscale  border-2 rounded-md mb-2.5 card">
             <span className="text-md dark:text-gray-300 ">
                Over the years have worked on multiple projects, which includes
                freelancing projects mostly covered with NDA, personal projects,
                and collaborated with teams on several occassions to deliver
                quality software solutions.
             </span>
-         </div>
+         </div> */}
          <MyCardFunc />
       </section>
    );

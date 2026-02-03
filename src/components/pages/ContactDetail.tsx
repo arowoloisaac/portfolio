@@ -43,7 +43,7 @@ const details = [
 const ContactDetail = () => {
    return (
       <section className="md:max-w-lg lg:max-w-lg mx-auto py-2">
-         <h2 className="text-3xl font-bold mb-2 ">Get in Touch</h2>
+         <h2 className="text-4xl font-bold mb-2 ">Get in Touch</h2>
          <p className="mb-5 text-lg">
             Thank you for your interest! I’m always excited to connect,
             collaborate, or discuss new opportunities. I’ll get back to you as

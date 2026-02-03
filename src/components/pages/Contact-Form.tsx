@@ -34,7 +34,7 @@ const ContactForm = () => {
 
    return (
       // F9F8F6 fcf9f9 EFE9E3
-      <section className="mx-auto md:max-w-lg lg:min-w-2xl border rounded-lg card">
+      <section className="mx-auto max-w-xl md:max-w-lg lg: xl:min-w-2xl border rounded-lg card">
          <div className="px-5 sm:px-10 py-8 lg:px-16">
             <p className="mb-8 capitalize text-xl font-semibold">
                You can also get in touch by filling the form below.

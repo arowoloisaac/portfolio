@@ -11,10 +11,7 @@ const Home = () => {
 
   return (
      <>
-        {/* <div className="pointer-events-none max-md:hidden">
-        <UseTime />
-      </div> */}
-        <section className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 bg-cover bg-center transition-all duration-700">
+        <section className="min-h-screen flex flex-col max-md:py-0 max-lg:py-8 lg:flex-row items-center justify-center px-4 bg-cover bg-center transition-all duration-700">
            <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -22,7 +19,7 @@ const Home = () => {
               className="lg:w-2/3 w-full max-lg:max-w-xl text-center md:text-left mb-8 lg:mb-0 lg:pl-16">
               <div className="flex flex-col min-[768px]:gap-5 min-[1024px]:flex-row max-sm:items-center lg:items-center">
                  <span className="text-2xl font-bold mb-0 lg:text-4xl 2xl:text-5xl lg:mb-4">
-                    Software Developer
+                    Software Engineer
                  </span>
 
                  <motion.span
@@ -65,7 +62,7 @@ const Home = () => {
               <img
                  src={my_image}
                  alt="Profile"
-                 className="w-64 h-72 md:w-120 md:h-fit rounded-xl shadow-xl object-cover"
+                 className="w-64 h-72 rounded-xl shadow-xl object-cover"
                  loading="lazy"
               />
            </motion.div>

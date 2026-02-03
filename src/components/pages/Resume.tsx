@@ -6,13 +6,19 @@ import 'react-pdf/dist/Page/TextLayer.css';
 import { ChevronRight } from 'lucide-react';
 import { ChevronLeft } from 'lucide-react';
 import { Button } from '../ui/button';
+import { HiDownload } from 'react-icons/hi';
+import { Spinner } from '../ui/spinner';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const Resume = ({ file }: { file: string }) => {
    const [numPages, setNumPages] = useState<number>(1);
    const [pageNumber, setPageNumber] = useState<number>(1);
    const [isLoading, setIsLoading] = useState<boolean>(true);
+   const [isDisabled, setIsDisabled] = useState<boolean>(false);
+   const [isClicked, setIsClicked] = useState<boolean>(true);
 
    const [width, setWidth] = useState(window.innerWidth);
 
@@ -22,26 +28,25 @@ const Resume = ({ file }: { file: string }) => {
    const loadingTimeout = useRef<number | null>(null);
 
    function changePage(offset: number) {
-      // setPageNumber((prevPageNumber) => prevPageNumber + offset);
       setTimeout(() => {
          setPageNumber((prevPageNumber) => prevPageNumber + offset);
-      }, 1);
+         setIsDisabled(false);
+      }, 500);
    }
 
    function previousPage() {
+      setIsDisabled(true);
       changePage(-1);
    }
 
    function nextPage() {
+      setIsDisabled(true);
       changePage(1);
    }
 
    useEffect(() => {
       const handleResize = () => setWidth(window.innerWidth);
       window.addEventListener('resize', handleResize);
-      // setTimeout(() => {
-      //   setIsLoading(false);
-      // }, 1800);
       loadingTimeout.current = window.setTimeout(() => {
          setIsLoading(false);
       }, 500);
@@ -55,14 +60,17 @@ const Resume = ({ file }: { file: string }) => {
       };
    }, []);
 
-   const handleClickDownload = () => {
+   const handleClickDownload = async () => {
       if (!file) return;
+      setIsClicked(false);
+      await delay(2500);
       const link = document.createElement('a');
       link.href = file;
       link.download = 'arowolo_isaac_cv.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+      setIsClicked(true);
    };
 
    return (
@@ -93,8 +101,9 @@ const Resume = ({ file }: { file: string }) => {
                   style={{ width: Math.min(width * 0.9, 800) }}>
                   <div className="flex gap-2 border p-2 rounded-2xl">
                      <button
+                        className="disabled:opacity-40 hover:bg-secondary rounded-l-md"
                         type="button"
-                        disabled={pageNumber <= 1 ? true : false}
+                        disabled={pageNumber <= 1 || isDisabled ? true : false}
                         onClick={previousPage}>
                         <ChevronLeft />
                      </button>
@@ -102,19 +111,26 @@ const Resume = ({ file }: { file: string }) => {
                         {pageNumber} / {numPages}
                      </span>
                      <button
+                        className="disabled:opacity-40 hover:bg-secondary rounded-r-md"
                         type="button"
-                        disabled={pageNumber == numPages ? true : false}
+                        disabled={
+                           pageNumber >= numPages || isDisabled ? true : false
+                        }
                         onClick={nextPage}>
                         <ChevronRight />
                      </button>
                   </div>
-                  <div>
-                     <Button
-                        onClick={handleClickDownload}
-                        className="bg-primary text-lg text-primary-foreground glow-on-hover">
-                        Download
-                     </Button>
-                  </div>
+                  <Button
+                     onClick={handleClickDownload}
+                     className="bg-primary text-lg text-primary-foreground font-bold"
+                     size="lg">
+                     Download{' '}
+                     {isClicked ? (
+                        <HiDownload className="animate-bounce size-fit " />
+                     ) : (
+                        <Spinner className="animate-caret-blink size-fit" />
+                     )}
+                  </Button>
                </div>
             </div>
          )}
