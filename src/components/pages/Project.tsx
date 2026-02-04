@@ -5,10 +5,10 @@ import { MyCardFunc } from './MyCard';
 const Project = () => {
    return (
       <section className="max-w-6xl min-h-screen mx-auto my-8 md:my-20 px-4">
-         <h2 className="text-3xl lg:text-5xl font-bold mb-2 dark:text-white">
+         <h2 className="text-3xl lg:text-5xl font-bold mb-2 ">
             My Projects
          </h2>
-         <p className="mb-6  dark:text-gray-300 text-sm sm:text-lg">
+         <p className="mb-6 text-sm sm:text-lg">
             Welcome to my project page. Here you will find a summary of my work,
             including timelines and documentation.
          </p>

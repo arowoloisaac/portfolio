@@ -11,7 +11,7 @@ import { Spinner } from '../ui/spinner';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+export const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const Resume = ({ file }: { file: string }) => {
    const [numPages, setNumPages] = useState<number>(1);

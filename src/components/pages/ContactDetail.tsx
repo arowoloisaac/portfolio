@@ -61,13 +61,13 @@ const ContactDetail = () => {
                   opacity: 1,
                   transition: { duration: 0.8 },
                }}
-               whileHover={{ rotate: 0.1 }}
-               className="card flex items-center wrap-anywhere gap-5 border mb-2 px-5 2xl:px-7 py-3.5 rounded-lg hover:px-6"
+               // whileHover={{ rotate: 0.1 }}
+               className="card flex items-center has-hover:rotate-1  wrap-anywhere gap-5 border mb-2 px-5 2xl:px-7 py-3.5 rounded-lg hover:px-6"
                key={index}>
                {item.icon}
                <div className="text-wrap">
                   <h5 className="text-lg font-normal">{item.name}</h5>
-                  <a href={item.link} className="hover:italic text-base ">
+                  <a href={item.link} className="hover:underline hover:italic text-base">
                      {item.text}
                   </a>
                </div>

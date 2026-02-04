@@ -1,15 +1,22 @@
 'use client';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { toast } from 'sonner';
 import emailjs from '@emailjs/browser';
+import { delay } from './Resume';
+import { Spinner } from '../ui/spinner';
+import { Button } from '../ui/button';
 
 const ContactForm = () => {
    const form = useRef<HTMLFormElement | any>('');
+   const [isClicked, setIsClicked] = useState<boolean>(false);
 
    const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
+
+      setIsClicked(true);
+      await delay(1500);
 
       await emailjs
          .sendForm(
@@ -30,10 +37,10 @@ const ContactForm = () => {
                console.log('FAILED...', error.text);
             }
          );
+      setIsClicked(false);
    };
 
    return (
-      // F9F8F6 fcf9f9 EFE9E3
       <section className="mx-auto max-w-xl md:max-w-lg lg: xl:min-w-2xl border rounded-lg card">
          <div className="px-5 sm:px-10 py-8 lg:px-16">
             <p className="mb-8 capitalize text-xl font-semibold">
@@ -59,7 +66,7 @@ const ContactForm = () => {
                   <Input
                      name="user_email"
                      type="email"
-                     placeholder="your_mail@gmail.com"
+                     placeholder="yourmail@gmail.com"
                      required
                      className="py-5"
                   />
@@ -88,11 +95,12 @@ const ContactForm = () => {
                      name="message"
                   />
                </div>
-               <button
+               <Button
+                  disabled={isClicked ? true : false}
                   type="submit"
-                  className="w-full bg-primary text-primary-foreground font-semibold py-3 px-6 rounded-md ">
-                  Send Message
-               </button>
+                  className=" w-full bg-primary active:bg-accent-foreground text-primary-foreground font-semibold h-12 py-3 px-6 rounded-md disabled:bg-destructive">
+                  Send Message {isClicked ? <Spinner /> : ''}
+               </Button>
             </form>
          </div>
       </section>

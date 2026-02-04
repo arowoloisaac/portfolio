@@ -2,19 +2,24 @@ import projectData from '../functions/project';
 import { Button } from '../ui/button';
 import type { IProject } from '../functions/project';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const MyCard = ({ prop }: { prop: IProject }) => {
    return (
-      <div
-         className="relative bg-card flex flex-col sm:flex-row border overflow-hidden gap-4 rounded-md"
+      <motion.div
+         initial={{ opacity: 0 }}
+         whileInView={{ opacity: 1, transition: { duration: 0.8, ease:'linear' } }}
+         className="relative bg-card flex flex-col sm:flex-row border overflow-hidden gap-4 rounded-md "
          key={prop.id}>
          <div
-            className={`absolute top-1 right-1 rounded-md p-1.5 hover:p-2 text-xs hover:outline-2 ${
-               prop.status === 'Ongoing'
-                  ? ' bg-accent/50'
-                  : 'bg-primary/80 text-primary-foreground'
-            }`}>
+            className={`absolute top-1 right-1 font-semibold lowercase rounded-md p-1.5 hover:p-2 text-sm
+               leading-3 hover:outline-1 ${
+                  prop.status === 'Ongoing'
+                     ? ' bg-accent/50'
+                     : 'bg-primary/90 text-primary-foreground'
+               }`}>
             {prop.status}
+            <p className="absolute -top-0 -right-0 text-black bg-green-700 rounded-full text-xs"></p>
          </div>
          <img
             className="h-56 w-full sm:h-70 sm:w-[45%] lg:w-98"
@@ -40,7 +45,7 @@ const MyCard = ({ prop }: { prop: IProject }) => {
                </Button>
             </div>
          </div>
-      </div>
+      </motion.div>
    );
 };
 
