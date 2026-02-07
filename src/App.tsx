@@ -59,7 +59,7 @@ function App() {
 
    return (
       <>
-         <div className="relative z-50 min-h-screen">
+         <div className="relative z-50 min-h-screen scroll-smooth">
             <ThemeProvider
                defaultTheme={DEFAULT_THEME}
                storageKey={STORAGE_KEY}>

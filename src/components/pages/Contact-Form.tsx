@@ -98,7 +98,7 @@ const ContactForm = () => {
                <Button
                   disabled={isClicked ? true : false}
                   type="submit"
-                  className=" w-full bg-primary active:bg-accent-foreground text-primary-foreground font-semibold h-12 py-3 px-6 rounded-md disabled:bg-destructive">
+                  className=" w-full bg-primary active:bg-accent-foreground text-primary-foreground text-lg font-semibold h-12 py-3 px-6 rounded-md disabled:bg-destructive">
                   Send Message {isClicked ? <Spinner /> : ''}
                </Button>
             </form>

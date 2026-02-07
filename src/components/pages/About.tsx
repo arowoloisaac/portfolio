@@ -5,11 +5,9 @@ import { EncryptedText } from '../ui/encrypted-text';
 const About = () => {
    // initial={{opacity:0.1}} whileInView={{opacity:0.95}}
    return (
-      <motion.section className="relative max-w-6xl mx-auto py-20 px-4 min-h-screen">
+      <motion.section className="relative max-w-5xl mx-auto py-20 px-4 min-h-screen">
          <div className="mb-4">
-            <h2 className="text-5xl font-bold mb-4 tracking-wide">
-               WHO AM I?
-            </h2>
+            <h2 className="text-5xl font-bold mb-4 tracking-wide">WHO AM I?</h2>
          </div>
          <hr className="mb-8 " />
          <div className="h-screen flex flex-col md:flex-row items-start md:items-center">
@@ -41,10 +39,10 @@ const About = () => {
                         transition: { duration: 0.8, ease: 'easeOut' },
                      }}
                      className="mb-4">
-                     Let me duly introduce myself to you, My name is Arowolo
-                     Isaac Abiodun and I am a graduate of the Tomsk State
-                     University where I studied Software Engineering and gained
-                     most of my experience as a software engineer.
+                     I am a graduate of Software Engineering at the Tomsk State
+                     University and gained most of my experience as a software
+                     engineer. Acquiring this knowledge does not suffice what I
+                     have attained.
                   </motion.p>
                   <motion.p
                      initial={{ x: -30, y: 20, opacity: 0.1 }}
@@ -54,11 +52,17 @@ const About = () => {
                         y: 0,
                         transition: { duration: 0.8, ease: 'easeIn' },
                      }}>
-                     Acquiring this knowledge does not suffice what I have
+                     {/* Acquiring this knowledge does not suffice what I have
                      attained, but I have applied them on multiple occasions at
                      different scopes from planning to deployment over the
                      course of 4 years, both collaboratively and independently,
-                     where I have proven myself as a learner and a leader.
+                     where I have proven myself as a learner and a leader. */}
+                     I have applied them on multiple occasions at different
+                     scopes working across system analysis, backend, and
+                     frontend development over the course of{' '}
+                     <span className="text-blue-400">5 years</span>, both
+                     collaboratively and independently, where I have proven
+                     myself as a learner and a leader.
                   </motion.p>
                </div>
             </motion.div>

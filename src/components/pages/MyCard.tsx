@@ -8,8 +8,11 @@ const MyCard = ({ prop }: { prop: IProject }) => {
    return (
       <motion.div
          initial={{ opacity: 0 }}
-         whileInView={{ opacity: 1, transition: { duration: 0.8, ease:'linear' } }}
-         className="relative bg-card flex flex-col sm:flex-row border overflow-hidden gap-4 rounded-md "
+         whileInView={{
+            opacity: 1,
+            transition: { duration: 0.8, ease: 'linear' },
+         }}
+         className="relative bg-card flex flex-col sm:flex-row border overflow-hidden gap-4  rounded-md "
          key={prop.id}>
          <div
             className={`absolute top-1 right-1 font-semibold lowercase rounded-md p-1.5 hover:p-2 text-sm
@@ -22,11 +25,11 @@ const MyCard = ({ prop }: { prop: IProject }) => {
             <p className="absolute -top-0 -right-0 text-black bg-green-700 rounded-full text-xs"></p>
          </div>
          <img
-            className="h-56 w-full sm:h-70 sm:w-[45%] lg:w-98"
+            className="h-56 w-full sm:h-full sm:w-[45%] lg:w-98"
             src={prop.imageUrl}
             alt=""
          />
-         <div className="flex flex-col justify-center gap-6 py-3 px-2.5">
+         <div className="flex flex-col justify-center gap-5 py-3 px-2.5">
             <div>
                <h4 className="text-xl leading-none font-semibold mb-1.5">
                   {prop.title}
@@ -34,15 +37,37 @@ const MyCard = ({ prop }: { prop: IProject }) => {
                <h6 className="text-lg text-muted-foreground">
                   {prop.shortDescription}
                </h6>
+               <div className="flex flex-wrap gap-2 mt-2">
+                  {' '}
+                  {prop.tags.flatMap((itm, idx) => (
+                     <span
+                        className="text-muted-foreground text-xs sm:text-sm border lowercase px-2 rounded-xl bg-accent/25 "
+                        key={idx}>
+                        {itm}
+                     </span>
+                  ))}
+               </div>
             </div>
 
             <div className="flex gap-2">
-               <Button className="px-8 bg-primary text-lg text-primary-foreground">
-                  Github
-               </Button>
-               <Button className="px-8 bg-secondary hover:bg-secondary/55 text-lg text-secondary-foreground">
-                  Demo
-               </Button>
+               <a
+                  href={prop.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <Button className="px-8 bg-primary text-lg text-primary-foreground">
+                     Github
+                  </Button>
+               </a>
+
+               {prop.demoUrl === '' ? (
+                  ''
+               ) : (
+                  <a href="" target="_blank">
+                     <Button className="px-8 bg-secondary hover:bg-secondary/55 text-lg text-secondary-foreground">
+                        Demo
+                     </Button>
+                  </a>
+               )}
             </div>
          </div>
       </motion.div>
@@ -56,9 +81,8 @@ const MyCardFunc = () => {
       setProjects(projectData);
    }, []);
 
-   console.log(getProjects);
    return (
-      <div className="grid gap-4">
+      <div id='projects' className="grid grid-cols-1 gap-4 sm:gap-7">
          {getProjects.map((item) => (
             <MyCard prop={item} />
          ))}

@@ -21,6 +21,7 @@ interface IProject {
    githubUrl: string;
    demoUrl: string;
    status: StatusType;
+   tags: string[];
 }
 
 const projectData = (): IProject[] => {
@@ -34,6 +35,26 @@ const projectData = (): IProject[] => {
          githubUrl: 'https://github.com/arowoloisaac/pm',
          demoUrl: '',
          status: 'Completed',
+         tags: [
+            'C#',
+            'React',
+            'Monolith',
+            '.NET',
+            'Testing',
+            'Quartz',
+            'Git',
+            'SQL',
+            'Typescript',
+            'MSSQL',
+            'Azure',
+            'System Analysis',
+            'Vite',
+            'Shadcn',
+            'Calendar Integration',
+            'Contextual Role-based auth',
+            'Gantt Integration',
+            'Email integration'
+         ],
       },
       {
          id: '2',
@@ -44,6 +65,7 @@ const projectData = (): IProject[] => {
          githubUrl: 'https://github.com/arowoloisaac/Project-Management',
          demoUrl: '',
          status: 'Completed',
+         tags: ['C#', '.NET', 'Testing', 'Git', 'SQL'],
       },
       {
          id: '3',
@@ -54,6 +76,19 @@ const projectData = (): IProject[] => {
          githubUrl: 'https://github.com/arowoloisaac/Key-Management-System',
          demoUrl: '',
          status: 'Completed',
+         tags: [
+            'C#',
+            'React',
+            '.NET',
+            'Testing',
+            'Git',
+            'Typescript',
+            'SQL',
+            'Vite',
+            'Business Analysis',
+            'System Analysis',
+            'MSSQL',
+         ],
       },
       {
          id: '4',
@@ -66,6 +101,17 @@ const projectData = (): IProject[] => {
             'https://github.com/arowoloisaac/Cabinet-Prototype-Frontend',
          demoUrl: '',
          status: 'Completed',
+         tags: [
+            'C#',
+            'Vue.js',
+            '.NET',
+            'Testing',
+            'Git',
+            'Email integration',
+            'JavaScript',
+            'SQL',
+            'MSSQL',
+         ],
       },
       {
          id: '5',
@@ -76,6 +122,19 @@ const projectData = (): IProject[] => {
          githubUrl: 'https://github.com/arowoloisaac/portfolio',
          demoUrl: '',
          status: 'Completed',
+         tags: [
+            'C#',
+            'React',
+            '.NET',
+            'Testing',
+            'Git',
+            'JavaScript',
+            'SQL',
+            'Vite',
+            'Mobile development*',
+            'Backend development',
+            'Analysis',
+         ],
       },
       {
          id: '6',
@@ -87,6 +146,14 @@ const projectData = (): IProject[] => {
          githubUrl: 'https://github.com/arowoloisaac/Bank-Account-System',
          demoUrl: '',
          status: 'Completed',
+         tags: [
+            'C#',
+            '.NET',
+            'Testing',
+            'Git',
+            'Console App',
+            'in-memory storage',
+         ],
       },
       {
          id: '7',
@@ -97,6 +164,15 @@ const projectData = (): IProject[] => {
          githubUrl: 'https://github.com/arowoloisaac/portfolio',
          demoUrl: 'https://arowolo.vercel.app/',
          status: 'Completed',
+         tags: [
+            'React',
+            'Vite',
+            'Vercel',
+            'Git',
+            'Typescript',
+            'EmailJs',
+            'Frontend development',
+         ],
       },
       {
          id: '8',
@@ -107,6 +183,23 @@ const projectData = (): IProject[] => {
          githubUrl: 'https://github.com/arowoloisaac/portfolio',
          demoUrl: '',
          status: 'Ongoing',
+         tags: [
+            'C#',
+            'Vite',
+            'React',
+            '.NET',
+            'Testing',
+            'Git',
+            'Modular Monolith',
+            'Clean Architecture',
+            'Typescript',
+            'SQL',
+            'Frontend development',
+            'System analysis',
+            'Backend development',
+            'map integration',
+            'payment integration',
+         ],
       },
       // {
       //    id: '9',

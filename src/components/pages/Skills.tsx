@@ -205,8 +205,8 @@ const mystacks = {
 const Skills = () => {
    return (
       <div className="mt-12  rounded-tl-2xl  rounded-br-2xl p-6 card">
-         <h1 className="text-center uppercase py-10 text-3xl lg:text-5xl md:text-4xl font-bold mb-4 tracking-wide">
-            Professional Skillset
+         <h1 className="text-center uppercase py-10 text-3xl lg:text-4xl md:text-4xl font-bold mb-4 tracking-wide">
+            Skillset I Acquired Over the years
          </h1>
          {Object.entries(mystacks).map(([key, values], idx) => (
             <motion.div
