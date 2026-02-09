@@ -11,7 +11,6 @@ import {
 import {
    SiFastapi,
    SiFlask,
-   SiGin,
    SiMongodb,
    SiMysql,
    SiPostgresql,
@@ -25,7 +24,7 @@ import {
 } from 'react-icons/si';
 import { IoLogoJavascript } from 'react-icons/io';
 import { FiFramer } from 'react-icons/fi';
-import { TbBrandCSharp, TbBrandGolang } from 'react-icons/tb';
+import { TbBrandCSharp } from 'react-icons/tb';
 import { DiDotnet, DiHeroku, DiMsqlServer } from 'react-icons/di';
 import { motion } from 'framer-motion';
 
@@ -95,14 +94,6 @@ const mystacks = {
          {
             name: '.NET Core',
             icon: <DiDotnet style={{ color: '#512BD4' }} />,
-         },
-         {
-            name: 'Golang',
-            icon: <TbBrandGolang style={{ color: '#00ADD8' }} />,
-         },
-         {
-            name: 'Gogin',
-            icon: <SiGin style={{ color: '#00D4B6' }} />,
          },
          {
             name: 'SQL',

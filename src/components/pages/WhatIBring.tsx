@@ -24,7 +24,7 @@ const WhatIBring = () => {
             y:-10,
             transition: { duration: 0.6, ease: 'backIn' },
          }}
-         className="h-fit xl:h-72 -mt-7 sm:-mt-1.5 2xl:-mt-28">
+         className="h-fit xl:h-72 -mt-7 sm:-mt-1.5 2xl:-mt-12">
          <div className="flex justify-center">
             <div className="flex max-sm:flex-col gap-4 max-w-5xl px-5">
                {data.map((itm, idx) => (
