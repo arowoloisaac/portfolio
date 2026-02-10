@@ -10,9 +10,9 @@ const MyCard = ({ prop }: { prop: IProject }) => {
          initial={{ opacity: 0 }}
          whileInView={{
             opacity: 1,
-            transition: { duration: 0.8, ease: 'linear' },
+            transition: { duration: 0.3*Number(prop.id), ease: 'linear' },
          }}
-         className="relative bg-card flex flex-col sm:flex-row border overflow-hidden gap-4  rounded-md "
+         className="relative bg-card flex flex-col lg:flex-row border overflow-hidden gap-4  rounded-md "
          key={prop.id}>
          <div
             className={`absolute top-1 right-1 font-semibold lowercase rounded-md p-1.5 hover:p-2 text-sm
@@ -25,16 +25,16 @@ const MyCard = ({ prop }: { prop: IProject }) => {
             <p className="absolute -top-0 -right-0 text-black bg-green-700 rounded-full text-xs"></p>
          </div>
          <img
-            className="h-56 w-full sm:h-full sm:w-[45%] lg:w-98"
+            className="h-72 w-full sm:h-full  lg:w-98"
             src={prop.imageUrl}
             alt=""
          />
          <div className="flex flex-col justify-center gap-5 py-3 px-2.5">
             <div>
-               <h4 className="text-xl leading-none font-semibold mb-1.5">
+               <h4 className="text-2xl leading-none font-semibold mb-6">
                   {prop.title}
                </h4>
-               <h6 className="text-lg text-muted-foreground">
+               <h6 className="text-xl mb-6">
                   {prop.shortDescription}
                </h6>
                <div className="flex flex-wrap gap-2 mt-2">
@@ -82,7 +82,7 @@ const MyCardFunc = () => {
    }, []);
 
    return (
-      <div id='projects' className="grid grid-cols-1 gap-4 sm:gap-7">
+      <div id='projects' className="grid grid-cols-1 gap-6 sm:gap-5 md:-mt-40 lg:-mt-12">
          {getProjects.map((item) => (
             <MyCard prop={item} />
          ))}

@@ -55,32 +55,40 @@ const FeaturedProject = () => {
          initial={{ opacity: 0 }}
          whileInView={{
             opacity: 0.9,
-            transition: { duration: 0.7, ease: 'easeIn' },
+            transition: { duration: 1, ease: 'easeIn' },
          }}
-         className="h-fit flex flex-col justify-center items-center my-6 gap-4 py-4 px-5  lg:-mt-9">
-         <h1 className="text-3xl leading-none space-x-1 mb-2.5 font-bold capitalize max-w-xl lg:max-w-3xl xl:max-w-4xl text-center">
+         // md:mt-9 lg:mt-24 xl:-mt-10
+         className="h-fit  flex flex-col justify-center items-center my-6 gap-2 py-4 px-5 ">
+         <h1 className="text-3xl xl:text-4xl leading-none space-x-1 mb-2.5 font-bold capitalize max-w-xl lg:max-w-3xl xl:max-w-4xl text-center">
             Notable Projects where I Shown My Expertise.
          </h1>
-         <div className="grid md:grid-cols-2 sm:grid-cols-1  gap-4 max-w-xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl">
+         <div className="grid  md:p-4 lg:p-8 rounded-2xl md:grid-cols-2 sm:grid-cols-1 gap-4 lg:gap-7 max-w-xl md:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
             {projects.map((itm, idx) => (
                <motion.div
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1, transition: { duration: idx } }}
-                  className="flex flex-col justify-between dark:border bg-card rounded-md p-3 sm:text-lg lg:p-5 "
+                  whileInView={{
+                     opacity: 1,
+                     transition: { duration: idx * 0.3 },
+                  }}
+                  whileHover={{ scale: 1.04 }}
+                  className="flex flex-col justify-between bg-card/90 rounded-md p-3 sm:text-lg lg:p-5 "
                   key={itm.id}>
-                  <h1 className="text-xl text-primary font-bold text-center mb-1.5">
+                  <h1 className="text-2xl  text-primary font-bold text-center mb-1.5">
                      {itm.title}
                   </h1>
-                  <span>
-                     <span className="underline capitalize">problem</span>:{' '}
-                     <span className="text-pretty text-muted-foreground">
+                  <span className="text-lg">
+                     <span className="underline decoration-accent text-card-foreground font-light capitalize">
+                        problem
+                     </span>
+                     :{' '}
+                     <span className="text-pretty text-muted-foreground/110">
                         {itm.problem}
                      </span>
                   </span>
                   <br />
                   <span>
-                     <span className="underline">Solution</span>:{' '}
-                     <span className="text-pretty text-muted-foreground">
+                     <span className="">Solution</span>:{' '}
+                     <span className="text-pretty text-muted-foreground/110">
                         {itm.solution}
                      </span>
                   </span>

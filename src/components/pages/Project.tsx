@@ -1,4 +1,5 @@
 'use client';
+import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 import CTA from './CTA';
 import { MyCardFunc } from './MyCard';
@@ -6,7 +7,7 @@ import { FaChevronDown } from 'react-icons/fa';
 
 const Project = () => {
    return (
-      <section className="max-w-5xl min-h-screen mx-auto px-4 ">
+      <motion.section initial={{opacity:0}} whileInView={{opacity:0.9, transition:{duration:0.8, ease:'anticipate'}}} className=" max-w-2xl md:max-w-2xl xl:max-w-5xl min-h-screen mx-auto px-4 ">
          <div className="h-screen flex flex-col items-center justify-center gap-3 text-center">
             {' '}
             <h2 className="text-3xl lg:text-5xl capitalize font-bold mb-2 ">
@@ -27,7 +28,7 @@ const Project = () => {
 
          <MyCardFunc />
          <CTA />
-      </section>
+      </motion.section>
    );
 };
 

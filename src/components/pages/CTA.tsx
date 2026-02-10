@@ -1,11 +1,15 @@
 import { useNavigate } from 'react-router';
 import { Button } from '../ui/button';
 import { BiPhoneCall } from 'react-icons/bi';
+import { motion } from 'framer-motion';
 
 const CTA = () => {
    const navigate = useNavigate();
    return (
-      <div className="flex items-center justify-center text-pretty text-center min-h-88  my-1.5  rounded-2xl">
+      <motion.div
+         initial={{ opacity: 0 }}
+         whileInView={{opacity:1, transition:{ease:'anticipate', duration:0.7}}}
+         className="flex items-center justify-center text-pretty text-center min-h-88  my-1.5  rounded-2xl">
          <div className="flex flex-col justify-center items-center max-w-2xl lg:max-w-4xl gap-3">
             <h1 className="text-3xl font-bold uppercase">
                I'm Open to opportunities
@@ -21,7 +25,7 @@ const CTA = () => {
                <BiPhoneCall className=" animate-pulse ml-2.5 size-5" />
             </Button>
          </div>
-      </div>
+      </motion.div>
    );
 };
 

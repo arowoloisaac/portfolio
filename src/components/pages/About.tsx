@@ -9,13 +9,13 @@ const About = () => {
          <div className="mb-4">
             <h2 className="text-5xl font-bold mb-4 tracking-wide">WHO AM I?</h2>
          </div>
-         <hr className="mb-8 " />
-         <div className="h-screen flex flex-col md:flex-row items-start md:items-center">
+         <hr className='md:-mb-40 lg:-mb-6 '/>
+         <div className="min-h-screen flex flex-col md:flex-row items-start md:items-center justify-center">
             <motion.div
                initial={{ opacity: 0, x: -40 }}
                animate={{ opacity: 1, x: 0 }}
                transition={{ duration: 0.7 }}
-               className="md:w-[50%] w-full mb-6 md:mb-0">
+               className="md:w-[40%] lg:w-[50%] w-full mb-6 md:mb-0">
                <EncryptedText
                   text="Welcome, My name is Arowolo Isaac."
                   className="text-3xl md:text-5xl font-bold capitalize "
@@ -28,7 +28,7 @@ const About = () => {
                initial={{ opacity: 0, y: 40 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 1.2 }}
-               className="md:w-[50%] w-full md:pl-8">
+               className="md:w-[60%] lg:w-[50%] w-full md:pl-8">
                <div className="rounded-lg shadow px-8 py-7 font-light card sm:text-xl">
                   <motion.p
                      initial={{ x: 40, y: 20, opacity: 0.2 }}

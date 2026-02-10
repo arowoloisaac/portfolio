@@ -1,6 +1,8 @@
 'use client';
 import { motion } from 'motion/react';
-// import UseTime from "../animations/cube";
+// import { TbBrandCSharp } from 'react-icons/tb';
+// import { FaPython, FaReact } from 'react-icons/fa';
+// import { SiDotnet } from 'react-icons/si';
 import useRole from '@/components/functions/role';
 import my_image from '@/assets/images/passport.jpg';
 import { NavLink } from 'react-router';
@@ -17,8 +19,12 @@ const Home = () => {
          <section className="flex justify-center w-full">
             <motion.div
                initial={{ opacity: 0 }}
-               whileInView={{ opacity: 1, transition: { duration: 1, ease:'easeIn' } }}
-               className=" h-screen justify-center md:h-120 lg:h-150 xl:min-h-screen flex flex-col sm:flex-row items-center px-5 md:px-3">
+               whileInView={{
+                  opacity: 1,
+                  transition: { duration: 1, ease: 'easeIn' },
+               }}
+               // md:h-120 lg:h-150
+               className=" h-screen justify-center md:-mt-46 xl:-mt-0 xl:min-h-screen flex flex-col sm:flex-row items-center px-5 md:px-3">
                {' '}
                <motion.div
                   initial={{ opacity: 0, x: -40 }}
@@ -61,17 +67,48 @@ const Home = () => {
                </motion.div>
                {/* Image Column */}
                <motion.div
-                  initial={{ opacity: 0, x: 40 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 4 }}
                   //   max-sm:hidden
-                  className="md:w-[32%] w-full flex justify-center ">
-                  <img
+                  className="relative md:w-[32%] w-full flex justify-center ">
+                  <motion.img
+                     animate={{
+                        scaleY: 1.11,
+                        scaleX: [1.02, 1.05, 1.02],
+                     }}
+                     transition={{
+                        scaleY: {
+                           duration: 5,
+                           repeat: Infinity,
+                           ease: 'easeInOut',
+                        },
+                        scaleX: {
+                           duration: 4,
+                           repeat: Infinity,
+                           ease: 'easeInOut',
+                        },
+                     }}
+                     whileInView={{ opacity: 1, x: 0 }} 
+                     initial={{ opacity: 0, x: 40 }}
+                     whileHover={{ scale: 1.3 }}
                      src={my_image}
                      alt="Profile"
                      className="w-64 h-72 rounded-xl shadow-xl object-cover"
                      loading="lazy"
                   />
+                  {/* <div className="relative w-68 h-74">
+                     <img
+                        src={my_image}
+                        alt="Profile"
+                        className="w-64 h-72 rounded-xl shadow-xl object-cover"
+                        loading="lazy"
+                     />
+                     <TbBrandCSharp className="size-12 absolute bg-transparent -top-0 -right-4  p-1.5 " />
+                     <SiDotnet className="size-12 absolute bg-transparent top-15 -right-4  p-1.5 " />
+                     <motion.div animate={{ rotate: [0, 0, 0.0004]}} transition={{duration:1, repeat:Infinity}}>
+                        <FaReact className="size-12 absolute bg-transparent top-30 -right-4  p-1.5 animate-spin duration-1000 transition-all" />
+                     </motion.div>
+
+                     <FaPython className="size-12 absolute bottom-15 -right-4  p-1.5  transition-all" />
+                  </div>*/}
                </motion.div>
             </motion.div>
          </section>
