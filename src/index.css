@@ -6,6 +6,7 @@
 @layer base {
   html {
     @apply font-mono antialiased text-gray-900;
+    scroll-behavior: smooth;
   }
   body {
     letter-spacing: var(--tracking-normal);
