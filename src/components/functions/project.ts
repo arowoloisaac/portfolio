@@ -4,6 +4,7 @@ import pmImage from '@/assets/images/pm.jpg';
 import kmsImage from '@/assets/images/kms.jpg';
 import deliveryImage from '@/assets/images/delivery.jpg';
 import orderImage from '@/assets/images/orderImage.jpg';
+import dsms from '@/assets/images/dsms.png'
 
 const Status = {
    Ongoing: 'Ongoing',
@@ -95,8 +96,7 @@ const projectData = (): IProject[] => {
          title: 'Digital School Management System',
          shortDescription:
             'A digital solution for managing school cabinets, resources, and internal school operations.',
-         imageUrl:
-            'https://cdn.shadcnstudio.com/ss-assets/components/card/image-2.png?height=280&format=auto',
+         imageUrl: dsms,
          githubUrl:
             'https://github.com/arowoloisaac/Cabinet-Prototype-Frontend',
          demoUrl: '',
